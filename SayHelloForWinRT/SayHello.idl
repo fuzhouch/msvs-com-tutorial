@@ -1,0 +1,9 @@
+namespace SayHelloForWinRT
+{
+    [default_interface]
+    runtimeclass SayHello
+    {
+        SayHello();
+        String Greetings { get; };
+    }
+}
