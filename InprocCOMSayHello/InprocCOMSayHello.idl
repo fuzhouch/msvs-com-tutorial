@@ -1,0 +1,39 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+// {82EB35D3-0275-4697-931B-76C6AD8D0D44}
+// IMPLEMENT_OLECREATE(<< class >>, << external_name >>,
+//     0x82eb35d3, 0x275, 0x4697, 0x93, 0x1b, 0x76, 0xc6, 0xad, 0x8d, 0xd, 0x44);
+[
+    object,
+    uuid("82EB35D3-0275-4697-931B-76C6AD8D0D44"),
+    helpstring("InProcCOM SayHello interface")
+]
+interface ISayHello : IDispatch
+{
+    [ id(1), helpstring("Greetings") ]
+    HRESULT Greetings([ out, retval ] BSTR * greeting);
+};
+
+
+// {F7F2B64D-5D9A-4E50-975E-B43EB6EECFBE}
+// IMPLEMENT_OLECREATE(<< class >>, << external_name >>,
+//    0xf7f2b64d, 0x5d9a, 0x4e50, 0x97, 0x5e, 0xb4, 0x3e, 0xb6, 0xee, 0xcf, 0xbe);
+
+
+[
+    uuid("F7F2B64D-5D9A-4E50-975E-B43EB6EECFBE"),
+    version(1.0),
+    helpstring("InProcCOMSayHello 1.0 Type Library")
+]
+library SayHelloLib
+{
+    // {3C51F084-1CC7-4229-BA0F-779267162C45}
+    // IMPLEMENT_OLECREATE(<< class >>, << external_name >>,
+    //    0x3c51f084, 0x1cc7, 0x4229, 0xba, 0xf, 0x77, 0x92, 0x67, 0x16, 0x2c, 0x45);
+    [uuid("3C51F084-1CC7-4229-BA0F-779267162C45"), version(1.0)]
+    coclass SayHello
+    {
+        [default] interface ISayHello;
+    };
+}

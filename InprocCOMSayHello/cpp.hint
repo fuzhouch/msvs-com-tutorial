@@ -1,0 +1,2 @@
+#define INPROCCOMSAYHELLO_API __declspec(dllexport)
+#define INPROCCOMSAYHELLO_API __declspec(dllimport)
